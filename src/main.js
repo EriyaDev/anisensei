@@ -57,7 +57,7 @@ var manySwiper = new Swiper('.many-swiper', {
 })
 
 var gridSwiper = new Swiper('.grid-swiper', {
-  slidesPerView: 1.1,
+  slidesPerView: 1.3,
   grid: {
     rows: 2,
     fill: 'row',
@@ -69,7 +69,7 @@ var gridSwiper = new Swiper('.grid-swiper', {
   },
   breakpoints: {
     640: {
-      slidesPerView: 1.1,
+      slidesPerView: 1.4,
       spaceBetween: 15,
     },
     768: {
