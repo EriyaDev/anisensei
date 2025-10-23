@@ -43,7 +43,7 @@ async function asynchitAPI() {
   try {
     const res = await axios.get('https://api.jikan.moe/v4/anime?q=' + search.value)
     searchResults.value = (await res).data.data
-    console.log(searchResults)
+    // console.log(searchResults)
   } catch (error) {
     console.error('Gagal ambil data:', error)
   } finally {
@@ -110,7 +110,14 @@ async function asynchitAPI() {
 
     <div class="swiper grid-swiper">
       <div class="swiper-wrapper py-10">
-        <div class="swiper-slide" v-for="anime in searchResults" :key="anime.mal_id">
+        <div
+          class="swiper-slide"
+          v-for="(anime, index) in searchResults"
+          :key="anime.mal_id"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          :data-aos-delay="index * 200"
+        >
           <div class="anime-card">
             <img class="h-72 aspect-[2/3] object-cover" :src="anime.images.webp.image_url" alt="" />
             <div class="flex flex-col gap-1">

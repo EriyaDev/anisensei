@@ -14,7 +14,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="section-container">
+  <section class="section-container" data-aos="fade" data-aos-duration="1000">
     <div class="grid grid-cols-5 lg:grid-cols-10 gap-10 h-[70vh] lg:h-[90vh]">
       <div class="col-span-5 flex items-center">
         <div class="flex flex-col gap-3">

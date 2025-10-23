@@ -2,11 +2,17 @@ import './assets/main.css'
 import Swiper from 'swiper'
 import 'swiper/css'
 import 'remixicon/fonts/remixicon.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css' // You can also use <link> for styles
 
 import { createApp } from 'vue'
 import App from './App.vue'
 
 createApp(App).mount('#app')
+
+AOS.init({
+  once: true,
+})
 
 var manySwiper = new Swiper('.many-swiper', {
   slidesPerView: 1.1,
@@ -29,11 +35,11 @@ var manySwiper = new Swiper('.many-swiper', {
       spaceBetween: 20,
     },
     1280: {
-      slidesPerView: 4.005,
+      slidesPerView: 4.1,
       spaceBetween: 20,
     },
     1520: {
-      slidesPerView: 5.005,
+      slidesPerView: 5.1,
       spaceBetween: 20,
     },
   },
@@ -71,11 +77,11 @@ var gridSwiper = new Swiper('.grid-swiper', {
       spaceBetween: 25,
     },
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 3.1,
       spaceBetween: 25,
     },
     1440: {
-      slidesPerView: 4,
+      slidesPerView: 4.1,
       spaceBetween: 30,
     },
   },

@@ -9,7 +9,7 @@ axios
   .then((response) => {
     topAnime.value = response.data.data.splice(0, 10)
 
-    console.log(topAnime.value)
+    // console.log(topAnime.value)
   })
   .catch((error) => {
     console.error('Error fetching topAnime:', error)
@@ -18,20 +18,30 @@ axios
 
 <template>
   <div id="top" class="section-container">
-    <div
-      class="flex flex-col items-start lg:items-end gap-3 lg:flex-row lg:justify-between"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
-      <h1 class="medium-title lg:max-w-[40%]">Top 10 Must-Watch Anime</h1>
-      <p class="text w-full lg:max-w-[40%]">
+    <div class="flex flex-col items-start lg:items-end gap-3 lg:flex-row lg:justify-between">
+      <h1 class="medium-title lg:max-w-[40%]" data-aos="fade-up" data-aos-duration="1000">
+        Top 10 Must-Watch Anime
+      </h1>
+      <p
+        class="text w-full lg:max-w-[40%]"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+      >
         Discover the most popular and highly rated anime right now. Our Top 10 list updates
         regularly, featuring titles loved by fans and praised by critics alike.
       </p>
     </div>
     <div class="swiper many-swiper">
       <div class="swiper-wrapper py-10">
-        <div class="swiper-slide" v-for="anime in topAnime" :key="anime.mal_id">
+        <div
+          class="swiper-slide"
+          v-for="(anime, index) in topAnime"
+          :key="anime.mal_id"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          :data-aos-delay="index * 200"
+        >
           <div class="anime-card !h-[440px]">
             <div class="relative">
               <img
@@ -51,9 +61,7 @@ axios
                 <h1 class="small-title line-clamp-1">{{ anime.title }}</h1>
                 <p class="text opacity-70">{{ anime.year }}</p>
               </div>
-              <a target="_blank" :href="anime.url" class="button-primary mt-3"
-                >Open in MyAnimeList</a
-              >
+              <a target="_blank" :href="anime.url" class="button-primary mt-3">See Details</a>
             </div>
           </div>
         </div>
