@@ -5,6 +5,7 @@ import AboutSection from './components/AboutSection.vue'
 import AnimeRecommendation from './components/AnimeRecommendation.vue'
 import SearchAnime from './components/SearchAnime.vue'
 import TopAnime from './components/TopAnime.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
@@ -14,4 +15,5 @@ import TopAnime from './components/TopAnime.vue'
   <AnimeRecommendation />
   <TopAnime />
   <SearchAnime />
+  <Footer />
 </template>
