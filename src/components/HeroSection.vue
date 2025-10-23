@@ -1,6 +1,6 @@
 <script setup>
 import { defineProps } from 'vue'
-import HeroImage from '@/assets/images/hero.png'
+import HeroImage from '@/assets/images/hero.webp'
 
 defineProps({
   title: {
