@@ -5,8 +5,8 @@ import HeroImage from '@/assets/images/hero.webp'
 defineProps({
   title: {
     type: String,
-    default: `Explore Your <span class="text-violet-600">Favorite Anime</span> with My<span
-            class="text-violet-600"
+    default: `Explore Your <span class="text-blue-600">Favorite Anime</span> with My<span
+            class="text-blue-600"
             >Anime</span
           >List`,
   },
@@ -19,8 +19,8 @@ defineProps({
       <div class="col-span-5 flex items-center">
         <div class="flex flex-col gap-3">
           <h1 class="title">
-            Explore Your <span class="text-violet-600">Favorite Anime</span> with Ani<span
-              class="text-violet-600"
+            Explore Your <span class="text-blue-600">Favorite Anime</span> with Ani<span
+              class="text-blue-600"
               >Sensei</span
             >
           </h1>

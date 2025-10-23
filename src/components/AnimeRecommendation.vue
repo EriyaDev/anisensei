@@ -52,7 +52,7 @@ axios
               <div
                 class="absolute top-2 right-2 bg-black/50 px-2 py-1 rounded-sm flex flex-row items-center gap-2"
               >
-                <i class="ri-thumb-up-fill text-violet-400"></i>
+                <i class="ri-thumb-up-fill text-blue-400"></i>
                 <p class="text-sm font-medium text-white">{{ anime.votes }}</p>
               </div>
             </div>
