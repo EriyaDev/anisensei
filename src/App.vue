@@ -12,8 +12,8 @@ import Footer from './components/Footer.vue'
   <Navbar />
   <HeroSection />
   <!-- <AboutSection /> -->
-  <AnimeRecommendation />
-  <TopAnime />
   <SearchAnime />
+  <TopAnime />
+  <AnimeRecommendation />
   <Footer />
 </template>
