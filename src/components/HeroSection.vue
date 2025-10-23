@@ -28,16 +28,16 @@ defineProps({
             Explore a world of anime tailored to your taste. Whether you’re into action, romance, or
             mystery — find the perfect show for your next binge.
           </p>
-          <div class="flex flex-row gap-2 items-center mt-3">
+          <div class="flex flex-col md:flex-row gap-2 md:items-center mt-3">
             <a
               href="#search"
-              class="py-2.5 px-5 hover:bg-gray-900 transition-all rounded-full bg-black text-white font-urbanist"
+              class="py-2.5 px-5 hover:bg-gray-900 transition-all rounded-full bg-black w-fit text-white font-urbanist"
             >
               Explore now
             </a>
             <a
               href="#recommendations"
-              class="py-2.5 px-5 hover:brightness-95 transition-all rounded-full bg-white text-black border border-black font-urbanist"
+              class="py-2.5 px-5 hover:brightness-95 transition-all rounded-full bg-white w-fit text-black border border-black font-urbanist"
             >
               Recommendations for You
             </a>

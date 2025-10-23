@@ -15,7 +15,7 @@ AOS.init({
 })
 
 var manySwiper = new Swiper('.many-swiper', {
-  slidesPerView: 1.1,
+  slidesPerView: 1.3,
   spaceBetween: 30,
   grabCursor: true,
   pagination: {
@@ -23,7 +23,7 @@ var manySwiper = new Swiper('.many-swiper', {
   },
   breakpoints: {
     640: {
-      slidesPerView: 1.7,
+      slidesPerView: 1.4,
       spaceBetween: 20,
     },
     768: {
