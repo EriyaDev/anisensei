@@ -9,7 +9,7 @@
       <h1 class="logo text-2xl font-bold font-urbanist">
         Ani<span class="text-blue-600">Sensei</span>
       </h1>
-      <ul class="flex flex-row gap-5 items-center">
+      <ul class="hidden md:flex flex-row gap-5 items-center">
         <li>
           <a class="text-black hover:text-blue-600 transition-all" href="#recommendations"
             >Recommendations</a
