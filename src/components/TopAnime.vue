@@ -67,7 +67,7 @@ axios
               <p class="text opacity-70">{{ anime.year }}</p>
               <p class="text line-clamp-3">{{ anime.synopsis }}</p>
             </div>
-            <div class="flex flex-wrap gap-1 mt-7">
+            <div class="flex flex-wrap gap-2 mt-7">
               <div class="badge" v-for="genre in anime.genres" :key="genre.mal_id">
                 <span
                   class="p-1 rounded-sm bg-blue-500/20 font-urbanist border border-blue-500/60 text-blue-600"
