@@ -9,7 +9,7 @@ axios
   .then((response) => {
     topAnime.value = response.data.data.splice(0, 10)
 
-    console.log(topAnime.value)
+    // console.log(topAnime.value)
   })
   .catch((error) => {
     console.error('Error fetching topAnime:', error)

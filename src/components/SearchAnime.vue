@@ -42,8 +42,12 @@ async function asynchitAPI() {
   loading.value = true
   try {
     const res = await axios.get('https://api.jikan.moe/v4/anime?q=' + search.value)
-    searchResults.value = (await res).data.data
-    // console.log(searchResults)
+    if (window.innerWidth <= 768) {
+      searchResults.value = (await res).data.data.slice(0, 9)
+    } else {
+      searchResults.value = (await res).data.data.slice(0, 10)
+    }
+    console.log(searchResults)
   } catch (error) {
     console.error('Gagal ambil data:', error)
   } finally {
@@ -65,7 +69,7 @@ async function asynchitAPI() {
         any anime, fast and easy.
       </p>
     </div>
-    <form @submit.prevent="asynchitAPI" action="">
+    <form @submit.prevent="asynchitAPI" action="" class="w-full md:w-[70%] lg:w-[60%]">
       <div class="flex flex-row items-end gap-5 py-10 font-urbanist w-full">
         <div class="w-full">
           <!-- <label for="search">Search for an anime:</label> -->
@@ -108,7 +112,52 @@ async function asynchitAPI() {
 
     <!-- <p>{{ searchResults }}</p> -->
 
-    <div class="swiper grid-swiper">
+    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-2 gap-y-4">
+      <div
+        v-for="(anime, index) in searchResults"
+        :key="anime.mal_id"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        :data-aos-delay="index * 200"
+        class="group"
+      >
+        <a :href="anime.url" class="group-hover:brightness-90 transition-all">
+          <div class="relative rounded-md w-full">
+            <img
+              class="h-40 md:h-56 lg:h-72 object-cover w-full rounded-sm group-hover:brightness-90"
+              :src="anime.images.webp.image_url"
+              alt=""
+            />
+            <div
+              class="inset-0 rounded-sm bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 absolute"
+            ></div>
+            <div
+              class="absolute top-0 right-0 bg-black/50 flex flex-row items-center gap-1 px-2 py-1 rounded-tr-sm !rounded-bl-md"
+            >
+              <i class="ri-star-fill text-yellow-400 text-xs md:text-sm lg:text-base"></i>
+              <p class="text-xs md:text-sm lg:text-base font-medium text-white font-urbanist">
+                {{ anime.score ? anime.score : '-' }}
+              </p>
+            </div>
+
+            <p
+              class="absolute bottom-0 left-0 px-2 py-1 text-xs md:text-sm lg:text-base font-medium text-white font-urbanist z-20"
+            >
+              Eps {{ anime.episodes ? anime.episodes : '-' }}
+            </p>
+          </div>
+          <div class="flex flex-col">
+            <div>
+              <h1 class="small-title !text-sm md:!text-base font-medium line-clamp-1">
+                {{ anime.title }}
+              </h1>
+              <p class="text !text-xs md:!text-sm line-clamp-1">{{ anime.title_japanese }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- <div class="swiper grid-swiper">
       <div class="swiper-wrapper py-10">
         <div
           class="swiper-slide"
@@ -118,8 +167,29 @@ async function asynchitAPI() {
           data-aos-duration="1000"
           :data-aos-delay="index * 200"
         >
-          <div class="anime-card">
-            <img class="h-72 aspect-[2/3] object-cover" :src="anime.images.webp.image_url" alt="" />
+          <a :href="anime.url" class="">
+            <div class="relative rounded-md min-w-fit">
+              <img
+                class="h-48 aspect-[11_/_16] object-cover min-w-fit rounded-sm"
+                :src="anime.images.webp.image_url"
+                alt=""
+              />
+              <div
+                class="inset-0 rounded-sm bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 absolute"
+              ></div>
+              <div
+                class="absolute top-0 right-0 bg-black/50 flex flex-row items-center gap-1 px-2 py-1 rounded-tr-sm !rounded-bl-md"
+              >
+                <i class="ri-star-fill text-yellow-400"></i>
+                <p class="text-sm font-medium text-white font-urbanist">{{ anime.score }}</p>
+              </div>
+
+              <p
+                class="absolute bottom-0 left-0 px-2 py-1 text-sm font-medium text-white font-urbanist z-20"
+              >
+                Eps {{ anime.episodes }}
+              </p>
+            </div>
             <div class="flex flex-col gap-1">
               <div>
                 <h1 class="small-title line-clamp-1">{{ anime.title }}</h1>
@@ -128,11 +198,11 @@ async function asynchitAPI() {
               <h1 class="small-title">{{ anime.score ? anime.score : '0' }}</h1>
               <a target="_blank" :href="anime.url" class="button-primary">See Details</a>
             </div>
-          </div>
+          </a>
         </div>
       </div>
       <div class="swiper-pagination"></div>
-    </div>
+    </div> -->
   </section>
 </template>
 
