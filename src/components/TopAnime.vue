@@ -32,13 +32,13 @@ axios
         regularly, featuring titles loved by fans and praised by critics alike.
       </p>
     </div>
-    <div class="flex flex-col gap-4 lg:hidden mt-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
       <div
         v-for="(anime, index) in topAnime"
         :key="anime.mal_id"
         class="hover:brightness-95 bg-[#fefefe] transition-all"
       >
-        <a :href="anime.url" class="flex flex-row gap-3">
+        <a :href="anime.url" class="flex flex-row h-full gap-3">
           <div class="relative rounded-md min-w-fit">
             <img
               class="h-48 aspect-[11_/_16] object-cover min-w-fit rounded-sm"
@@ -62,12 +62,12 @@ axios
             </p>
           </div>
           <div class="flex flex-col w-full justify-between h-full">
-            <div class="flex flex-col">
-              <h1 class="small-title line-clamp-1">{{ anime.title }}</h1>
+            <div class="flex flex-col h-full">
+              <h1 class="small-title line-clamp-1">#{{ index + 1 }} {{ anime.title }}</h1>
               <p class="text opacity-70">{{ anime.year }}</p>
               <p class="text line-clamp-3">{{ anime.synopsis }}</p>
             </div>
-            <div class="flex flex-wrap gap-2 mt-7">
+            <div class="flex flex-wrap mb-1 gap-2 w-full">
               <div class="badge" v-for="genre in anime.genres" :key="genre.mal_id">
                 <span
                   class="p-1 rounded-sm bg-blue-500/20 font-urbanist border border-blue-500/60 text-blue-600"
@@ -79,7 +79,7 @@ axios
         </a>
       </div>
     </div>
-    <div class="w-full hidden lg:block">
+    <div class="w-full hidden">
       <div class="swiper many-swiper">
         <div class="swiper-wrapper py-10">
           <div

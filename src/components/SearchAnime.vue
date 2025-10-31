@@ -112,7 +112,7 @@ async function asynchitAPI() {
 
     <!-- <p>{{ searchResults }}</p> -->
 
-    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-2 gap-y-4">
+    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-2 lg:gap-x-5 gap-y-4">
       <div
         v-for="(anime, index) in searchResults"
         :key="anime.mal_id"
@@ -148,7 +148,7 @@ async function asynchitAPI() {
           </div>
           <div class="flex flex-col">
             <div>
-              <h1 class="small-title !text-sm md:!text-base font-medium line-clamp-1">
+              <h1 class="small-title !text-sm md:!text-base lg:text-lg font-medium line-clamp-1">
                 {{ anime.title }}
               </h1>
               <p class="text !text-xs md:!text-sm line-clamp-1">{{ anime.title_japanese }}</p>
